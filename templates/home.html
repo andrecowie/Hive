@@ -1,4 +1,4 @@
-{% extends "base.html" %} {% block title %}HiveHome{% endblock %} {% block body %}
+{% extends "base.html" %} {% block title %}Hive{% endblock %} {% block body %}
 <div id="navbar-div">
     <nav class="navbar navbar-expand-lg navbar-light bg-transparent">
         <a class="navbar-brand" style="padding: 0px;" href="#">{% block svg %}{% endblock %}</a>
@@ -6,30 +6,34 @@
     <span class="navbar-toggler-icon text-center"></span>
   </button>
 
-        <div class="collapse navbar-collapse" style="margin-top: -50px" id="navbarSupportedContent">
-            <ul class="navbar-nav mx-auto ">
-                <li class="nav-item active">
-                    <a class="nav-link  text-center" style="font-family: 'Neuton', serif;" href="#">HOME<span class="sr-only">(current)</span></a>
+        <div class="collapse navbar-collapse" style="margin-top: 0px" id="navbarSupportedContent">
+            <ul class="navbar-nav">
+                <li class="nav-item ">
+                    <a class="nav-link  text-center" id="home-nav" style="font-family: 'myFirstFont', serif;color: #373737;" href="#">HOME</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link  text-center " style="font-family: 'Neuton', serif;" href="#">LINK</a>
+                    <a class="nav-link  text-center" id="blog-nav" style="font-family: 'myFirstFont', serif;color: #373737;" href="#">BLOG</a>
                 </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link text-center " style="font-family: 'Neuton', serif;" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">DROPDOWN</a>
-                    <div class="dropdown-menu bg-da text-center bg-warning " aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" style="font-family: 'Concert One', cursive;" href="#">ANDRÉ</a>
-                        <a class="dropdown-item" style="font-family: 'Space Mono', monospace;" href="#">ANEEKA</a>
-                        <a class="dropdown-item" style="font-family: 'Asul', sans-serif;" href="#">BRITT</a>
-                        <a class="dropdown-item" style="font-family: 'Work Sans', sans-serif;" href="#">HARRY</a>
+                <li class="nav-item">
+                    <a class="nav-link  text-center " id="photos-nav" style="font-family: 'myFirstFont', serif;color: #373737;" href="#">PHOTOS</a>
+                </li>
 
-                        <div class="dropdown-divider " style="border-color:black;"></div>
-                        <a class="dropdown-item" href="#">SOMETHING</a>
+                <li class="nav-item dropdown">
+                    <a class="nav-link text-center " style="font-family: 'myFirstFont', serif;color: #373737;" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">PROFILES</a>
+                    <div class="dropdown-menu bg-da text-center bg-ourcolor" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" style="font-family: 'Space Mono', cursive;" href="#"><u>ANDRÉ</u></a>
+                        <a class="dropdown-item" style="font-family: 'Space Mono', monospace;" href="#"><u>ANEEKA</u></a>
+                        <a class="dropdown-item" style="font-family: 'Space Mono', sans-serif;" href="#"><u>BRITT</u></a>
+                        <a class="dropdown-item" style="font-family: 'Space Mono', sans-serif;" href="#"><u>HARRY</u></a>
+
+                        <!-- <div class="dropdown-divider " style="border-color:black;"></div>
+                        <a class="dropdown-item" href="#">SOMETHING</a> -->
                     </div>
                 </li>
-                {#
                 <li class="nav-item">
-                    <a class="nav-link disabled" href="#">Disabled</a>
-                </li> #}
+                    <a class="nav-link  text-center " style="font-family: 'myFirstFont', serif;color: #373737;" href="#">ABOUT</a>
+                </li>
+                {#<li class="nav-item"><a class="nav-link disabled" href="#">Disabled</a></li> #}
             </ul>
 
 
@@ -39,27 +43,10 @@
 
 
 <div class="container">
-    <div class="row">
 
-        <div class="col-sm">
+      {% block landing %}
+      {% endblock %}
 
-            <div class="media">
-                <img class="mr-6 image-fluid" src="{{url_for('static', filename='flower_boy.png')}}" alt="Generic placeholder image"/>
-                <div class="media-body">
-                    <h5 class="mt-0">Media heading</h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vel purus ac libero dapibus feugiat ac vel lectus. Aliquam tortor nibh, auctor a dui non, interdum malesuada est. Pellentesque sagittis vulputate iaculis. Suspendisse interdum, mauris eget imperdiet consectetur, tellus lectus volutpat ante, quis porttitor nisi magna vel leo. Integer convallis lorem non ullamcorper dictum. Praesent sed ante quam. Nulla cursus leo orci, vitae aliquet dui suscipit ut. Suspendisse at faucibus nisi. Nulla accumsan ante eget nunc euismod lacinia. Sed pellentesque libero ac iaculis ultrices. Maecenas pellentesque quis lectus et auctor.
-<br/>
-Pellentesque non ipsum enim. Phasellus sodales, urna at luctus gravida, velit enim malesuada arcu, sed varius justo mauris eget est. Nulla facilisi. Proin malesuada at sapien et egestas. Cras fermentum ultrices quam nec pellentesque. Aliquam vulputate nisi eget tincidunt auctor. Sed a leo faucibus ligula interdum consequat. Sed augue justo, porta at vestibulum sodales, auctor eget lorem. Nullam eget venenatis ipsum.
-
-Aliquam turpis ligula, faucibus vitae dui vel, ultrices maximus ligula. Aliquam ut tempor dolor. Nullam eu interdum urna, sed sollicitudin diam. Duis id lorem nec velit ultrices rhoncus at vitae mauris. Nunc sed purus porttitor, elementum diam id, venenatis nisi. Etiam id mollis arcu. Pellentesque pulvinar, massa quis efficitur pharetra, justo neque dignissim nulla, egestas tristique dui tellus vitae metus. Duis non est ac neque porttitor blandit. Proin dolor turpis, hendrerit fringilla dictum ac, dignissim at massa. Nunc gravida auctor ante, vel scelerisque felis bibendum ut. Sed aliquet nunc vitae egestas fermentum.
-
-
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-2">
-        </div>
-
-    </div>
 </div>
 
 

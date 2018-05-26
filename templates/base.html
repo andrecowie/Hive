@@ -12,6 +12,7 @@ font-family: 'Space Mono', monospace;
 font-family: 'Neuton', serif; -->
     <link href="https://fonts.googleapis.com/css?family=Asul|Concert+One|Neuton|Space+Mono|Work+Sans" rel="stylesheet">
     <link type="text/css" rel="stylesheet" href="{{url_for('static', filename='css/bootstrap/bootstrap.min.css')}}" media="screen,projection" />
+
     <title>{% block title %}{% endblock %}</title>
     {% endblock %}
 </head>
@@ -20,20 +21,60 @@ font-family: 'Neuton', serif; -->
     {% block body %}
     {% endblock %}
     <script src="{{url_for('static', filename='js/jquery-3.1.1.min.js')}}"></script>
+    <script src="{{url_for('static', filename='js/main.js')}}"></script>
     <script type="text/javascript" src="{{url_for('static', filename='js/bootstrap/bootstrap.bundle.min.js')}}"></script>
     <script>
         console.log("Hello it's ground control.");
     </script>
     <style>
     body{
-        background-color: #fbed21;
+        background-color: #ffc800;
     }
     nav{
-        background-color: #fbed21;
+        background-color: #ffc800;
     }
+
     .show>.dropdown-menu {
   left: 50%;
   transform: translateX(-50%);
+  }
+@media screen and (max-width: 992px){
+  .show>.dropdown-menu {
+left: 50%;
+transform: translateX(0);
+}
+}
+.bg-ourcolor{
+
+  background-color: #ffc800;
+  border: 0;
+}
+@font-face {
+    font-family: myFirstFont;
+    src: url({{url_for('static', filename='Chivo-Regular.ttf')}});
+}
+@font-face {
+    font-family: mySecondFont;
+    src: url({{url_for('static', filename='Chivo-Black.ttf')}});
+}
+@font-face {
+    font-family: lack;
+    src: url({{url_for('static', filename='Lack-Regular.otf')}});
+}
+
+@media screen and (max-width: 992px){
+}
+.nav-link{
+  font-size: 1.5em;
+  margin-left: 15px;
+  margin-right: 15px;
+
+}
+hr {
+
+  margin-bottom: 3rem;
+  border: 0;
+  border-top: 2px solid rgba(0, 0, 0, 0.5);
 }
     </style>
 </body>
