@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    {% block head %}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- font-family: 'Concert One', cursive;
+font-family: 'Asul', sans-serif;
+font-family: 'Work Sans', sans-serif;
+font-family: 'Space Mono', monospace;
+font-family: 'Neuton', serif; -->
+    <link href="https://fonts.googleapis.com/css?family=Asul|Concert+One|Neuton|Space+Mono|Work+Sans" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="{{url_for('static', filename='css/bootstrap/bootstrap.min.css')}}" media="screen,projection" />
+    <title>{% block title %}{% endblock %}</title>
+    {% endblock %}
+</head>
+
+<body>
+    {% block body %}
+    {% endblock %}
+    <script src="{{url_for('static', filename='js/jquery-3.1.1.min.js')}}"></script>
+    <script type="text/javascript" src="{{url_for('static', filename='js/bootstrap/bootstrap.bundle.min.js')}}"></script>
+    <script>
+        console.log("Hello it's ground control.");
+    </script>
+    <style>
+    body{
+        background-color: #fbed21;
+    }
+    nav{
+        background-color: #fbed21;
+    }
+    .show>.dropdown-menu {
+  left: 50%;
+  transform: translateX(-50%);
+}
+    </style>
+</body>
+
+</html>
