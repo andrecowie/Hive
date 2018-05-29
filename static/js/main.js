@@ -46,7 +46,7 @@ $(document).ready(function(){
     $('#about').addClass('d-none');
   });
   $("#britt-nav").click(function(){
-    console.log("Click");
+    console.log("Clickbritt");
     $('#blog').addClass('d-none');
     $('#home').addClass('d-none');
     $('#andre').addClass('d-none');
